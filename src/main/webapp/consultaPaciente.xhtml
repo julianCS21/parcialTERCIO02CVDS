@@ -19,18 +19,9 @@
             <!--Por favor no cambiar el 'value':-->
             <p:commandButton value="Consultar"  actionListener="#{mb.consultarPacientesPorId}" update="pacientes"></p:commandButton>
             <br> </br>
-            <p:outputLabel  value= "Nombre : #{mb.pa.getNombre()}"/>
-            <br> </br>
-            <p:outputLabel  value= "Id : #{mb.pa.getId()}"/>
-            <p:dataTable id="pacientes" var="paciente" value="#{mb.data}">
+            <p:dataTable id="pacientes" var="paciente" value="#{db.getConsultas()}">
             <p:column headerText="Id">
                 <h:outputText value="#{paciente.id}" />
-            </p:column>
-            <p:column headerText="Fecha Nacimiento">
-                <h:outputText value="#{paciente.fechaNacimiento}" />
-            </p:column>
-            <p:column headerText="nombre">
-                <h:outputText value="#{paciente.nombre}" />
             </p:column>
             <p:column headerText="Fecha y hora Consulta">
                 <h:outputText value="#{consulta.fechayHora}" />

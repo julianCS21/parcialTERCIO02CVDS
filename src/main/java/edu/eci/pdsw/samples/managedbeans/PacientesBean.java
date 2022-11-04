@@ -103,9 +103,6 @@ public class PacientesBean extends BasePageBean{
 
 
 
-    public ArrayList<Consulta> data(){
-        return (ArrayList<Consulta>) pa.getConsultas();
 
-    }
     
 }

@@ -10,7 +10,7 @@
         <id property='tipo_id' column='tipo_id' typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
         <result property='fechaNacimiento' column='fecha_nacimiento'/>
         <result property='nombre' column='nombre'/>
-        <collection property='consultas' javaType='ArrayList' ofType='Consulta' resultMap='edu.eci.pdsw.samples.persistence.mybatisimpl.mappers.PacienteMapper.ConsultaResult' columnPrefix='consulta_'></collection>
+        <collection property='consultas' javaType='ArrayList' ofType='Consulta' resultMap='edu.eci.pdsw.samples.persistence.mybatisimpl.mappers.ConsultaMapper.ConsultaResult' columnPrefix='consulta_'></collection>
     </resultMap>
 
     <select id="getPacientes" resultMap="PacienteResult">
