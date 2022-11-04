@@ -16,11 +16,14 @@
  */
 package edu.eci.pdsw.samples.managedbeans;
 
+import edu.eci.pdsw.samples.entities.Consulta;
 import edu.eci.pdsw.samples.entities.Paciente;
 import edu.eci.pdsw.samples.entities.TipoIdentificacion;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosSuscripciones;
 import edu.eci.pdsw.samples.services.ServiciosPaciente;
 import edu.eci.pdsw.samples.services.ServiciosPacientesFactory;
+
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -95,6 +98,13 @@ public class PacientesBean extends BasePageBean{
 
             throw ex;
         }
+
+    }
+
+
+
+    public ArrayList<Consulta> data(){
+        return (ArrayList<Consulta>) pa.getConsultas();
 
     }
     

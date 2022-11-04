@@ -9,7 +9,7 @@
         <title></title>
     </h:head>
     <h:body>
-        <h1>TITULO</h1>
+        <h1>Consultas a enfermos</h1>
         <h:form id="pacientes">
             <!--Por favor no cambiar el 'id':-->
             <p:inputText id="identificacion_paciente" value="#{mb.id}"></p:inputText>
@@ -22,7 +22,23 @@
             <p:outputLabel  value= "Nombre : #{mb.pa.getNombre()}"/>
             <br> </br>
             <p:outputLabel  value= "Id : #{mb.pa.getId()}"/>
-
+            <p:dataTable id="pacientes" var="paciente" value="#{mb.data}">
+            <p:column headerText="Id">
+                <h:outputText value="#{paciente.id}" />
+            </p:column>
+            <p:column headerText="Fecha Nacimiento">
+                <h:outputText value="#{paciente.fechaNacimiento}" />
+            </p:column>
+            <p:column headerText="nombre">
+                <h:outputText value="#{paciente.nombre}" />
+            </p:column>
+            <p:column headerText="Fecha y hora Consulta">
+                <h:outputText value="#{consulta.fechayHora}" />
+            </p:column>
+            <p:column headerText="Resumen Consulta">
+                <h:outputText value="#{consulta.resumen}" />
+            </p:column>
+            </p:dataTable>
         </h:form>
     </h:body>
 </html>
