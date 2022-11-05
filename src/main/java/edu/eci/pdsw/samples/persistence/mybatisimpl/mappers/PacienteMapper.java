@@ -36,7 +36,7 @@ public interface PacienteMapper {
     List<Paciente> getPacientes();
 
 
-    Paciente consultarPacientesPorId(@Param("id") int id, @Param("tipoIdentificacion")TipoIdentificacion tipoIdentificacion );
+    Paciente consultarPacientesPorId(@Param("id") int id, TipoIdentificacion tipoIdentificacion );
 
 
 

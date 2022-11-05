@@ -6,11 +6,15 @@
 <mapper namespace="edu.eci.pdsw.samples.persistence.mybatisimpl.mappers.ConsultaMapper">
 
     <resultMap type='Consulta' id='ConsultaResult'>
-        <id property='id' column='idCONSULTAS'/>
+        <id property='id' column='id'/>
         <result property='fechayHora' column='fecha_y_hora'/>
         <result property='resumen' column='resumen'/>
-        <result property='PACIENTES_id' column='PACIENTES_id'/>
-        <result property='PACIENTES_tipo_id' column='PACIENTES_tipo_id'/>
     </resultMap>
+
+
+    <select id="getConsultas" resultMap="ConsultaResult">
+        SELECT con.idCONSULTAS, con.fecha_y_hora, con.resumen, con.PACIENTES_id, con.PACIENTES_tipo_id
+        FROM CONSULTAS as con
+    </select>
 
 </mapper>

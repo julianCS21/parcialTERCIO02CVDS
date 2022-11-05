@@ -14,7 +14,7 @@ public class MyBatisDAOConsulta implements DaoConsulta {
     ConsultaMapper consultaMapper;
 
     @Override
-    public List<Consulta> loadAll() throws PersistenceException {
+    public List<Consulta> getConsultas() throws PersistenceException {
         try{
 
             return consultaMapper.getConsultas();

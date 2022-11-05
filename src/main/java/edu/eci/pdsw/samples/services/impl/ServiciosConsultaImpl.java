@@ -18,7 +18,7 @@ public class ServiciosConsultaImpl implements ServiciosConsulta {
     @Override
     public List<Consulta> obtenerConsulta() throws ExcepcionServiciosSuscripciones {
         try {
-            return daoConsulta.loadAll();
+            return daoConsulta.getConsultas();
         } catch (PersistenceException ex) {
             throw new ExcepcionServiciosSuscripciones("Error al realizar la consulta:"+ex.getLocalizedMessage(), ex);
         }

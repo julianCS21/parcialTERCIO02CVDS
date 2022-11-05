@@ -8,5 +8,5 @@ import java.util.List;
 public interface DaoConsulta {
 
 
-    public List<Consulta> loadAll() throws PersistenceException;
+    public List<Consulta> getConsultas() throws PersistenceException;
 }
