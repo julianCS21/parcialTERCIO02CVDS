@@ -7,4 +7,6 @@ import java.util.List;
 public interface ConsultaMapper {
 
     public List<Consulta> getConsultas();
+
+
 }

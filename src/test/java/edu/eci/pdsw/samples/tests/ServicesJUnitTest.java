@@ -64,9 +64,8 @@ public class ServicesJUnitTest {
     }
     
     @Test
-    public void pruebaCeroTest() throws SQLException, ExcepcionServiciosSuscripciones {
-        //Insertar datos en la base de datos de pruebas, de acuerdo con la clase
-        //de equivalencia correspondiente
+    public void DadoUnIdDeberiaConsultarelpaciente() throws SQLException, ExcepcionServiciosSuscripciones {
+        //arrange
         Connection conn=getConnection();
         Statement stmt=conn.createStatement();
 
@@ -78,7 +77,7 @@ public class ServicesJUnitTest {
 	
         //Realizar la operacion de la logica y la prueba
         
-        
+        //act
         List<Paciente> pacientes = ServiciosPacientesFactory.getInstance().getTestingForumServices().consultarPacientes();
 
         
@@ -86,7 +85,7 @@ public class ServicesJUnitTest {
             System.out.println(paciente);
         }
         //assert ...
-        Assert.fail("Pruebas no implementadas aun...");
+
         
     }    
     

@@ -43,6 +43,8 @@ public class PacientesBean extends BasePageBean{
     @Inject
     ServiciosPaciente sp;
 
+
+
     TipoIdentificacion tipoIdentificacion = TipoIdentificacion.CC;
     private int id;
     private Paciente pa;
@@ -90,7 +92,8 @@ public class PacientesBean extends BasePageBean{
 
     public void consultarPacientesPorId() throws ExcepcionServiciosSuscripciones {
         try {
-            Paciente pa2 = sp.consultarPacientesPorId(id,tipoIdentificacion);
+            Paciente pa2 = sp.consultarPacientesPorId(id, tipoIdentificacion);
+            System.out.println(pa2.toString());
             setPa(pa2);
 
 

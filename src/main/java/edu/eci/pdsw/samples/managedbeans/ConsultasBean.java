@@ -17,8 +17,11 @@ public class ConsultasBean extends  BasePageBean{
     @Inject
     ServiciosConsulta sp;
 
+
+
     public List<Consulta> getConsultas() throws ExcepcionServiciosSuscripciones {
         try {
+            System.out.println(sp.obtenerConsulta().toString());
             return sp.obtenerConsulta();
         } catch (ExcepcionServiciosSuscripciones ex) {
             throw ex;

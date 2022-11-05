@@ -19,15 +19,17 @@
             <!--Por favor no cambiar el 'value':-->
             <p:commandButton value="Consultar"  actionListener="#{mb.consultarPacientesPorId}" update="pacientes"></p:commandButton>
             <br> </br>
-            <p:dataTable id="pacientes" var="paciente" value="#{db.getConsultas()}">
+
+
+            <p:dataTable id="pacientes"  var="paciente" value="#{mb.pa.consultas}">
             <p:column headerText="Id">
                 <h:outputText value="#{paciente.id}" />
             </p:column>
             <p:column headerText="Fecha y hora Consulta">
-                <h:outputText value="#{consulta.fechayHora}" />
+                <h:outputText value="#{paciente.fechayHora}" />
             </p:column>
             <p:column headerText="Resumen Consulta">
-                <h:outputText value="#{consulta.resumen}" />
+                <h:outputText value="#{paciente.resumen}" />
             </p:column>
             </p:dataTable>
         </h:form>
