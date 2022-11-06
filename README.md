@@ -32,6 +32,23 @@ Recuerde que en el formato XML no se puede utilizar '<' y '>', por ejemplo al re
   > **Para** Poder hacer una revisión de las consultas realizadas por un paciente cuyo documento ya conozco, y así evitar la búsqueda por el nombre del paciente.
   >
   > **Criterio de aceptación:** Se debe mostrar la fecha de nacimiento del paciente, su nombre, y cada una de las consultas realizadas. Las consultas deben estar organizadas de la más reciente (mostrados arriba) a la más antígua, y deben mostrar la fecha y el resúmen.
+  
+ Consulta en el mapper
+ 
+![image](https://user-images.githubusercontent.com/96396177/200182914-69eff18f-70f6-48a5-968c-7c588f6dbc1b.png)
+
+resultmaps(ignore pacienteResult3)
+
+![image](https://user-images.githubusercontent.com/96396177/200182953-7b2e66b6-46d5-4e67-8d69-e16bda29d68e.png)
+
+resultado.
+  
+![image](https://user-images.githubusercontent.com/96396177/200182849-64665846-0561-4644-a218-93e51d36546c.png)
+
+![image](https://user-images.githubusercontent.com/96396177/200182991-cc694830-f368-4bb8-862d-766760480914.png)
+
+
+
 
 ## Historia de usuario #2
 
