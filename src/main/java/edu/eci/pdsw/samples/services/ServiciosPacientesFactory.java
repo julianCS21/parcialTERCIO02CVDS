@@ -21,8 +21,22 @@ import javax.inject.Inject;
  *
  * @author hcadavid
  */
-public class ServiciosPacientesFactory {
 
+
+import org.mybatis.guice.XMLMyBatisModule;
+import org.mybatis.guice.datasource.helper.JdbcHelper;
+
+import static com.google.inject.Guice.createInjector;
+import com.google.inject.Injector;
+import edu.eci.pdsw.samples.persistence.DaoPaciente;
+import edu.eci.pdsw.samples.persistence.mybatisimpl.MyBatisDAOPaciente;
+import edu.eci.pdsw.samples.services.impl.ServiciosPacienteImpl;
+
+/**
+ *
+ * @author hcadavid
+ */
+public class ServiciosPacientesFactory {
 
     private static ServiciosPacientesFactory instance = new ServiciosPacientesFactory();
 
@@ -32,29 +46,29 @@ public class ServiciosPacientesFactory {
     private ServiciosPacientesFactory() {
         injector = createInjector(new XMLMyBatisModule() {
 
-            @Override
-            protected void initialize() {
-                install(JdbcHelper.MySQL);
-                setClassPathResource("mybatis-config.xml");
-                bind(ServiciosPaciente.class).to(ServiciosPacienteImpl.class);
-                bind(DaoPaciente.class).to(MyBatisDAOPaciente.class);
+                                      @Override
+                                      protected void initialize() {
+                                          install(JdbcHelper.MySQL);
+                                          setClassPathResource("mybatis-config.xml");
+                                          bind(ServiciosPaciente.class).to(ServiciosPacienteImpl.class);
+                                          bind(DaoPaciente.class).to(MyBatisDAOPaciente.class);
 
-            }
+                                      }
 
-        }
+                                  }
         );
 
         testingInjector = createInjector(new XMLMyBatisModule() {
 
-            @Override
-            protected void initialize() {
-                install(JdbcHelper.MySQL);
-                setClassPathResource("mybatis-config-h2.xml");
-                bind(ServiciosPaciente.class).to(ServiciosPacienteImpl.class);
-                bind(DaoPaciente.class).to(MyBatisDAOPaciente.class);
-            }
+                                             @Override
+                                             protected void initialize() {
+                                                 install(JdbcHelper.MySQL);
+                                                 setClassPathResource("mybatis-config-h2.xml");
+                                                 bind(ServiciosPaciente.class).to(ServiciosPacienteImpl.class);
+                                                 bind(DaoPaciente.class).to(MyBatisDAOPaciente.class);
+                                             }
 
-        }
+                                         }
         );
 
     }

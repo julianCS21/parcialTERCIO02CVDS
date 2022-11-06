@@ -93,10 +93,19 @@ public class PacientesBean extends BasePageBean{
     public void consultarPacientesPorId() throws ExcepcionServiciosSuscripciones {
         try {
             Paciente pa2 = sp.consultarPacientesPorId(id, tipoIdentificacion);
-            System.out.println(pa2.toString());
             setPa(pa2);
 
 
+        } catch (ExcepcionServiciosSuscripciones ex) {
+
+            throw ex;
+        }
+
+    }
+
+    public List<Paciente> consultarMenoresConEnfermedadContagiosa()  throws Exception{
+        try {
+            return sp.consultarMenoresConEnfermedadContagiosa();
         } catch (ExcepcionServiciosSuscripciones ex) {
 
             throw ex;

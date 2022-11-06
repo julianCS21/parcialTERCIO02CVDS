@@ -4,13 +4,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import edu.eci.pdsw.samples.persistence.DaoConsulta;
 import edu.eci.pdsw.samples.persistence.DaoPaciente;
-import edu.eci.pdsw.samples.persistence.mybatisimpl.MyBatisDAOConsulta;
 import edu.eci.pdsw.samples.persistence.mybatisimpl.MyBatisDAOPaciente;
-import edu.eci.pdsw.samples.services.ServiciosConsulta;
 import edu.eci.pdsw.samples.services.ServiciosPaciente;
-import edu.eci.pdsw.samples.services.impl.ServiciosConsultaImpl;
 import edu.eci.pdsw.samples.services.impl.ServiciosPacienteImpl;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
@@ -36,8 +32,7 @@ public class GuiceContextListener implements ServletContextListener {
                 setClassPathResource("mybatis-config.xml");
                 bind(ServiciosPaciente.class).to(ServiciosPacienteImpl.class);
                 bind(DaoPaciente.class).to(MyBatisDAOPaciente.class);
-                bind(ServiciosConsulta.class).to(ServiciosConsultaImpl.class);
-                bind(DaoConsulta.class).to(MyBatisDAOConsulta.class);
+
 
             }
         });

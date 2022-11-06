@@ -32,10 +32,10 @@ public class Paciente {
     private TipoIdentificacion tipo_id;
     private String nombre;
     private Date fechaNacimiento;
-    List<Consulta> consultas;
+    private List<Consulta> consultas;
     
 
-    public Paciente(int id, TipoIdentificacion tipo_id, String nombre, Date fechaNacimiento) {
+    public  Paciente(int id, TipoIdentificacion tipo_id, String nombre, Date fechaNacimiento) {
         this.id = id;
         this.tipo_id = tipo_id;
         this.nombre = nombre;
@@ -43,9 +43,7 @@ public class Paciente {
         consultas=new ArrayList<>();
     }
 
-    public Paciente() {
-        consultas=new ArrayList<>();
-    }
+
 
     public int getId() {
         return id;
@@ -91,7 +89,7 @@ public class Paciente {
     public String toString() {
         StringBuffer rep = new StringBuffer("Paciente: { id:"+id+", tipo_id:"+tipo_id+", nombre: "+nombre+", fechaNacimiento: "+fechaNacimiento+", consultas : [\n");
         for (Consulta c:consultas){
-            rep.append(c+"\n");
+            rep.append(c + "\n");
         }
         rep.append("]");
         return rep.toString();

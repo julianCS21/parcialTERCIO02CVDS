@@ -16,8 +16,10 @@
  */
 package edu.eci.pdsw.samples.tests;
 
+import com.google.inject.Inject;
 import edu.eci.pdsw.samples.entities.Paciente;
 import edu.eci.pdsw.samples.entities.Consulta;
+import edu.eci.pdsw.samples.entities.TipoIdentificacion;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosSuscripciones;
 import edu.eci.pdsw.samples.services.ServiciosPacientesFactory;
 import java.sql.Connection;
@@ -37,11 +39,37 @@ import org.junit.Test;
  */
 public class ServicesJUnitTest {
 
+
+
+
     public ServicesJUnitTest() {
     }
 
     @Before
-    public void setUp() {
+    public void setUp() throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=MYSQL", "anonymous", "anonymous");
+        Statement stmt = conn.createStatement();
+        //stmt.execute("CREATE TABLE `PACIENTES` (\n" +
+                //"  `id` int(11) NOT NULL,\n" +
+                //"  `tipo_id` varchar(2),\n" +
+                //"  `nombre` varchar(45) NOT NULL,\n" +
+                //"  `fecha_nacimiento` date NOT NULL,\n" +
+                //"  PRIMARY KEY (`id`,`tipo_id`)\n" +
+                //") ENGINE=InnoDB;");
+        //stmt.execute("CREATE TABLE `CONSULTAS` (\n" +
+                //"  `idCONSULTAS` int(11) NOT NULL AUTO_INCREMENT,\n" +
+                //"  `fecha_y_hora` datetime NOT NULL,\n" +
+                //"  `resumen` text  NOT NULL,\n" +
+                //"  `PACIENTES_id` int(11) NOT NULL DEFAULT '0',\n" +
+                //"  `PACIENTES_tipo_id` varchar(2),\n" +
+                //"  PRIMARY KEY (`idCONSULTAS`),\n" +
+                //"  KEY `fk_CONSULTAS_PACIENTES1` (`PACIENTES_id`,`PACIENTES_tipo_id`),\n" +
+                //"  CONSTRAINT `fk_CONSULTAS_PACIENTES1` FOREIGN KEY (`PACIENTES_id`, `PACIENTES_tipo_id`) REFERENCES `PACIENTES` (`id`, `tipo_id`) ON DELETE NO ACTION ON UPDATE NO ACTION\n" +
+                //") ENGINE=InnoDB;\n");
+        conn.commit();
+        conn.close();
+
+
     }
 
     @After
@@ -75,19 +103,25 @@ public class ServicesJUnitTest {
         conn.commit();
         conn.close();
 	
-        //Realizar la operacion de la logica y la prueba
+
         
         //act
+        Paciente paciente = ServiciosPacientesFactory.getInstance().getTestingForumServices().consultarPacientesPorId(9876, TipoIdentificacion.TI);
         List<Paciente> pacientes = ServiciosPacientesFactory.getInstance().getTestingForumServices().consultarPacientes();
+        boolean var = false;
+        for (Paciente p : pacientes){
+            if(paciente.getId() == p.getId()){
+                var = true;
+                break;
 
-        
-        for (Paciente paciente : pacientes){
-            System.out.println(paciente);
+            }
         }
-        //assert ...
+        //assert
+        Assert.assertTrue(var);
+    }
 
-        
-    }    
+
+
     
 
 }

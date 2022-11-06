@@ -9,7 +9,6 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.samples.entities.Consulta;
 import edu.eci.pdsw.samples.entities.Paciente;
 import edu.eci.pdsw.samples.entities.TipoIdentificacion;
-import edu.eci.pdsw.samples.persistence.DaoConsulta;
 import edu.eci.pdsw.samples.persistence.DaoPaciente;
 import edu.eci.pdsw.samples.persistence.PersistenceException;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosSuscripciones;
@@ -25,8 +24,7 @@ public class ServiciosPacienteImpl implements ServiciosPaciente {
     @Inject
     private DaoPaciente daoPaciente;
 
-    @Inject
-    private DaoConsulta daoConsulta;
+
 
     @Override
     public List<Paciente> consultarPacientes() throws ExcepcionServiciosSuscripciones {
@@ -50,20 +48,19 @@ public class ServiciosPacienteImpl implements ServiciosPaciente {
 
     @Override
     public List<Paciente> consultarMenoresConEnfermedadContagiosa() throws ExcepcionServiciosSuscripciones {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-
-
-    public List<Consulta> getConsultas() throws ExcepcionServiciosSuscripciones {
         try {
 
-            return daoConsulta.getConsultas();
+            return daoPaciente.loadEnfermos();
         } catch (PersistenceException ex) {
             throw new ExcepcionServiciosSuscripciones("Error al realizar la consulta:"+ex.getLocalizedMessage(), ex);
         }
+
     }
+
+
+
+
+
 
 
     
