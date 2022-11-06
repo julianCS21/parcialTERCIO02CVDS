@@ -86,6 +86,16 @@ resultmaps
 ![image](https://user-images.githubusercontent.com/96396177/200183965-5fa9c227-86ac-44e3-8105-9895cc2eca0f.png)
 cada consulta con un resultmap diferente
 
+prueba
+
+![image](https://user-images.githubusercontent.com/96396177/200187621-6262daa6-4e97-4663-b577-5c67c1b87980.png)
+
+
+prueba ejecutada
+
+![image](https://user-images.githubusercontent.com/96396177/200187580-fcbfef05-0fa9-4c44-8bee-0800524c0d05.png)
+
+
 
 
 2.  (40%) Implemente la historia de usuario #1, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en consultaPaciente.xhtml.
