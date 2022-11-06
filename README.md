@@ -105,14 +105,14 @@ resultado.
 ![image](https://user-images.githubusercontent.com/96396177/200182849-64665846-0561-4644-a218-93e51d36546c.png)
 
 ![image](https://user-images.githubusercontent.com/96396177/200182991-cc694830-f368-4bb8-862d-766760480914.png)
-consulta a dicho paciente con todas sus consultas vista desde el de la plataforma de consultas médicas.
+consulta a dicho paciente con todas sus consultas vista desde el ususario de la plataforma de consultas médicas.
 
 3.  (40%)Implemente la historia de usuario #2, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en consultarMenoresEnfermedadContagiosa.xhtml.
 
 resultado
 
 ![image](https://user-images.githubusercontent.com/96396177/200184437-ed323590-6765-4049-8366-06a35c884fcc.png)
-consulta a pacientes cuyas enfermedades son contagiosas desde el uuario de la secretaría de salud de la plataforma.
+consulta a pacientes cuyas enfermedades son contagiosas desde el usuario de la secretaría de salud de la plataforma.
 
 
 ## Entrega
