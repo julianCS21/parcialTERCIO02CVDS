@@ -32,6 +32,11 @@ Recuerde que en el formato XML no se puede utilizar '<' y '>', por ejemplo al re
   > **Para** Poder hacer una revisión de las consultas realizadas por un paciente cuyo documento ya conozco, y así evitar la búsqueda por el nombre del paciente.
   >
   > **Criterio de aceptación:** Se debe mostrar la fecha de nacimiento del paciente, su nombre, y cada una de las consultas realizadas. Las consultas deben estar organizadas de la más reciente (mostrados arriba) a la más antígua, y deben mostrar la fecha y el resúmen.
+  
+
+
+
+
 
 ## Historia de usuario #2
 
@@ -61,10 +66,53 @@ Mostrar los pacientes menores de edad que en sus consultas se encuentren las enf
 1.  (20%) A partir de la especificación hecha en los métodos
     *consultarPacientesPorId* y *consultarMenoresConEnfermedadContagiosa* de la fachada de
     servicios (la parte lógica de la aplicación), implemente sólo una prueba (la que considere más importante para validar las especificaciones y los criterios de aceptación). Siga el esquema usado en ServicesJUnitTest para poblar la base de datos volátil y verificar el comportamiento de las operaciones de la lógica.
+    
+ Consultas en el mapper
+ 
+![image](https://user-images.githubusercontent.com/96396177/200184929-d667d44c-b12c-4d35-aafb-174bcb1d91d6.png)
+consulta para menores de edad con enfermedades contagiosas
+
+
+![image](https://user-images.githubusercontent.com/96396177/200184002-937684c5-bd82-423a-a1d0-e41b7eed4c82.png)
+consulta para saber todas las consultas de dicho paciente.
+
+
+resultmaps
+
+![image](https://user-images.githubusercontent.com/96396177/200182953-7b2e66b6-46d5-4e67-8d69-e16bda29d68e.png)
+
+![image](https://user-images.githubusercontent.com/96396177/200183952-c6b453c6-5fc3-4563-87cc-00ef23d3fa16.png)
+
+![image](https://user-images.githubusercontent.com/96396177/200183965-5fa9c227-86ac-44e3-8105-9895cc2eca0f.png)
+cada consulta con un resultmap diferente
+
+prueba
+
+![image](https://user-images.githubusercontent.com/96396177/200187621-6262daa6-4e97-4663-b577-5c67c1b87980.png)
+
+
+prueba ejecutada
+
+![image](https://user-images.githubusercontent.com/96396177/200187580-fcbfef05-0fa9-4c44-8bee-0800524c0d05.png)
+
+
+
 
 2.  (40%) Implemente la historia de usuario #1, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en consultaPaciente.xhtml.
 
+resultado.
+  
+![image](https://user-images.githubusercontent.com/96396177/200182849-64665846-0561-4644-a218-93e51d36546c.png)
+
+![image](https://user-images.githubusercontent.com/96396177/200182991-cc694830-f368-4bb8-862d-766760480914.png)
+consulta a dicho paciente con todas sus consultas vista desde el usuario de la plataforma de consultas médicas.
+
 3.  (40%)Implemente la historia de usuario #2, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en consultarMenoresEnfermedadContagiosa.xhtml.
+
+resultado
+
+![image](https://user-images.githubusercontent.com/96396177/200184437-ed323590-6765-4049-8366-06a35c884fcc.png)
+consulta a pacientes cuyas enfermedades son contagiosas desde el usuario de la secretaría de salud de la plataforma.
 
 
 ## Entrega
